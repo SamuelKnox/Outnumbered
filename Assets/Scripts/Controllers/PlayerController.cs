@@ -1,47 +1,49 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(StateMachine))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(MoveSystem))]
-[RequireComponent(typeof(BuildSystem))]
-[RequireComponent(typeof(ShootSystem))]
+[RequireComponent(typeof(Mobility))]
+[RequireComponent(typeof(Builder))]
+[RequireComponent(typeof(Shooter))]
 public class PlayerController : MonoBehaviour
 {
-    private StateMachine stateMachine;
     private Animator animator;
-    private MoveSystem moveSystem;
-    private BuildSystem buildSystem;
-    private ShootSystem shootSystem;
+    private Mobility mobility;
+    private Builder builder;
+    private Shooter shooter;
 
     void Start()
     {
-        stateMachine = GetComponent<StateMachine>();
         animator = GetComponent<Animator>();
-        moveSystem = GetComponent<MoveSystem>();
-        buildSystem = GetComponent<BuildSystem>();
-        shootSystem = GetComponent<ShootSystem>();
+        mobility = GetComponent<Mobility>();
+        builder = GetComponent<Builder>();
+        shooter = GetComponent<Shooter>();
     }
     // Update is called once per frame
     void Update()
     {
-        moveSystem.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        mobility.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         animator.SetFloat("Movement Speed", rigidbody2D.velocity.sqrMagnitude);
         if (Input.GetButton("Build Barricade"))
         {
-            buildSystem.Build(Resources.Load("Barricade") as GameObject);
+            builder.Build(Resources.Load("Barricade") as GameObject);
             animator.SetTrigger("Building");
         }
         if (Input.GetButton("Build Turret"))
         {
-            buildSystem.Build(Resources.Load("Turret") as GameObject);
+            builder.Build(Resources.Load("Turret") as GameObject);
             animator.SetTrigger("Building");
         }
         if (Input.GetButton("Shoot"))
         {
-            shootSystem.Shoot(Resources.Load("Bullet") as GameObject);
+            shooter.Shoot(Resources.Load("Bullet") as GameObject);
             animator.SetTrigger("Shoot");
+        }
+        if (Input.GetButton("Destroy Structure"))
+        {
+            builder.DestroyStructure();
+            animator.SetTrigger("Building");
         }
     }
 }

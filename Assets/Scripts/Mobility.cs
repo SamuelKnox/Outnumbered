@@ -2,28 +2,27 @@
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(MobilityComponent))]
-public class MoveSystem : MonoBehaviour
+public class Mobility : MonoBehaviour
 {
-    private MobilityComponent mobilityComponent;
-
-    void Start()
-    {
-        mobilityComponent = GetComponent<MobilityComponent>();
-    }
+    [Tooltip("Speed at which the entity moves")]
+    public float Speed = 1.0f;
+    [Tooltip("Whether or not the entity is able to move")]
+    public bool Moveable = true;
+    [Tooltip("Whether or not the entity should be facing in the direction they are moving")]
+    public bool RotateWithMovement = true;
     /// <summary>
     /// Moves gameObject based on the parameters of horizontal axis, vertical axis, and speed
     /// </summary>
     public void Move(float horizontalAxis, float verticalAxis)
     {
         Vector2 movement = Vector2.zero;
-        if (mobilityComponent.Moveable)
+        if (Moveable)
         {
             movement = new Vector2(horizontalAxis, verticalAxis);
-            movement *= mobilityComponent.Speed;
+            movement *= Speed;
         }
         rigidbody2D.velocity = movement;
-        if (mobilityComponent.RotateWithMovement)
+        if (RotateWithMovement)
         {
             RotatePlayerInDirectionOfMovement(movement);
         }

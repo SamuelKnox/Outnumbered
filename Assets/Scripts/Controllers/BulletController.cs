@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletController : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+public class BulletController : MonoBehaviour
+{
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        switch (collider.tag)
+        {
+            case "Enemy":
+                collider.gameObject.AddComponent<Death>();
+                Destroy(gameObject);
+                break;
+            case "Structure":
+                Destroy(gameObject);
+                break;
+            case "Trees":
+                Destroy(gameObject);
+                break;
+        }
+    }
 }

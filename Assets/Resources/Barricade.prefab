@@ -11,6 +11,7 @@ GameObject:
   - 95: {fileID: 9521436}
   - 212: {fileID: 21221436}
   - 61: {fileID: 6116346}
+  - 114: {fileID: 11457350}
   m_Layer: 0
   m_Name: Barricade
   m_TagString: Structure
@@ -56,6 +57,17 @@ Animator:
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11457350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ddc88f79afec647b7da7c6a28d00f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21221436
 SpriteRenderer:
   m_ObjectHideFlags: 1
