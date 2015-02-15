@@ -3,14 +3,16 @@ using System.Collections;
 
 public class Shooter : MonoBehaviour
 {
-    [Tooltip("Offset from the entity where the ammunition spawns")]
-    public Vector2 SpawnOffset;
+    [Tooltip("Distance from entity where the ammunition spawns")]
+    public float SpawnDistance;
     [Tooltip("Speed at which the ammunition leaves the shooter")]
     public float Speed = 1.0f;
     [Tooltip("Direction in which the ammunition will travel.  If Vector2.zero, the ammunition will travel in the direction that the entity is facing.")]
     public Vector2 Direction = Vector2.zero;
     [Tooltip("Rate in seconds at which the entity is able to fire")]
     public float RateOfFire = 1.0f; private float reloadTimeRemaining;
+    [Tooltip("Ammunition which will be shot by this entity")]
+    public GameObject Ammunition;
 
     void Start()
     {
@@ -22,14 +24,14 @@ public class Shooter : MonoBehaviour
         reloadTimeRemaining -= Time.deltaTime;
     }
 
-    public void Shoot(GameObject ammunitionPrefab)
+    public bool Shoot()
     {
         if (reloadTimeRemaining > 0)
         {
-            return;
+            return false;
         }
-        Vector3 ammunitionPosition = transform.position + new Vector3(transform.up.x * SpawnOffset.x, transform.up.y * SpawnOffset.y);
-        GameObject ammunition = Instantiate(ammunitionPrefab, ammunitionPosition, transform.rotation) as GameObject;
+        Vector2 ammunitionPosition = transform.position + transform.up * SpawnDistance;
+        GameObject ammunition = Instantiate(Ammunition, ammunitionPosition, transform.rotation) as GameObject;
         if (Direction == Vector2.zero)
         {
             ammunition.rigidbody2D.AddForce(transform.up * Speed);
@@ -40,5 +42,6 @@ public class Shooter : MonoBehaviour
         }
         ammunition.transform.parent = GameObject.Find("Ammunition").transform;
         reloadTimeRemaining = RateOfFire;
+        return true;
     }
 }

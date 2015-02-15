@@ -9,6 +9,9 @@ public class Attacker : MonoBehaviour {
     
     public void AttackTarget()
     {
-        Target.AddComponent<Death>();
+        if (Target.GetComponent<Death>() == null)
+        {
+            Target.AddComponent<Death>();
+        }
     }
 }

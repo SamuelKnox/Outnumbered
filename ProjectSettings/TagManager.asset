@@ -6,6 +6,8 @@ TagManager:
   - Structure
   - Enemy
   - Trees
+  - Enemy Spawner
+  - Ghost
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

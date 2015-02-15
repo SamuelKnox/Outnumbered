@@ -6,6 +6,10 @@ public class Builder : MonoBehaviour
 {
     [Tooltip("Range at which the entity builds")]
     public float Range = 1.0f;
+    [Tooltip("Barricade which the entity can build")]
+    public GameObject Barricade;
+    [Tooltip("Turret which the entity can build")]
+    public GameObject Turret;
 
     private Mobility mobility;
 
@@ -15,7 +19,7 @@ public class Builder : MonoBehaviour
         mobility = GetComponent<Mobility>();
     }
 
-    public void Build(GameObject structurePrefab)
+    public void Build(string structureName)
     {
         Vector2 buildPosition = transform.position + transform.up * Range;
         if (Physics2D.OverlapPoint(buildPosition))
@@ -23,7 +27,18 @@ public class Builder : MonoBehaviour
             return;
         }
         mobility.Moveable = false;
+        GameObject structurePrefab = null;
+        switch (structureName)
+        {
+            case "Barricade":
+                structurePrefab = Barricade;
+                break;
+            case "Turret":
+                structurePrefab = Turret;
+                break;
+        }
         GameObject structure = Instantiate(structurePrefab, transform.position + transform.up * Range, transform.rotation) as GameObject;
+        structure.transform.parent = GameObject.Find("Structures").transform;
         StartCoroutine("EnableMovementAfterConstructionComplete");
     }
 

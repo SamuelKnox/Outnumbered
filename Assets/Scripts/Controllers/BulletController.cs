@@ -11,9 +11,6 @@ public class BulletController : MonoBehaviour
                 collider.gameObject.AddComponent<Death>();
                 Destroy(gameObject);
                 break;
-            case "Structure":
-                Destroy(gameObject);
-                break;
             case "Trees":
                 Destroy(gameObject);
                 break;

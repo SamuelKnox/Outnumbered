@@ -20,7 +20,8 @@ public class ZombieController : MonoBehaviour
         {
             FindNewTarget();
         }
-        if(Vector2.Distance(attacker.Target.transform.position, transform.position) <= attacker.Range){
+        if (attacker.Target != null && Vector2.Distance(attacker.Target.transform.position, transform.position) <= attacker.Range)
+        {
             attacker.AttackTarget();
         }
     }
@@ -32,30 +33,20 @@ public class ZombieController : MonoBehaviour
         {
             return;
         }
-        //float targetDistance = pathfindingSystem.GetRemainingDistanceToTarget();
-        //foreach (Transform ghostTransform in GameObject.FindGameObjectWithTag("Ghosts").transform)
-        //{
-        //    GameObject ghost = ghostTransform.gameObject;
-        //    if(ghost.gameObject.)
-        //}
-        //{
-        //    Health ghost = ghostGameObject.GetComponent<Health>();
-        //    if (!ghost.IsAlive)
-        //    {
-        //        continue;
-        //    }
-        //    Agent.SetDestination(ghost.transform.position);
-        //    float ghostDistance = Agent.remainingDistance;
-        //    if (ghostDistance < targetDistance)
-        //    {
-        //        target = ghost;
-        //        targetDistance = ghostDistance;
-        //    }
-        //}
-        //Agent.SetDestination(target.transform.position);
+        pathfinder.Target = target;
+        float targetDistance = pathfinder.Agent.remainingDistance;
+        foreach (GameObject ghost in GameObject.FindGameObjectsWithTag("Ghost"))
+        {
+            pathfinder.Target = ghost;
+            if (pathfinder.Agent.remainingDistance < targetDistance)
+            {
+                target = ghost;
+                targetDistance = pathfinder.Agent.remainingDistance;
+            }
+        }
         if (pathfinder.IsPathBlocked())
         {
-            float targetDistance = Mathf.Infinity;
+            targetDistance = Mathf.Infinity;
             foreach (GameObject structure in GameObject.FindGameObjectsWithTag("Structure"))
             {
                 if (Vector2.Distance(structure.transform.position, transform.position) > attacker.Range)
