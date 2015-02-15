@@ -13,8 +13,10 @@ GameObject:
   - 114: {fileID: 11432322}
   - 50: {fileID: 5032326}
   - 114: {fileID: 11432324}
-  - 114: {fileID: 11432326}
   - 61: {fileID: 6132326}
+  - 114: {fileID: 11497782}
+  - 114: {fileID: 11497780}
+  - 114: {fileID: 11497778}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -48,7 +50,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &6132326
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -100,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0854265362bab440b49729551a61582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11432326
+--- !u!114 &11497778
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -111,6 +113,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76141be9a614169438a1fdb59675d6f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11497780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84400c4a557163a4d8cc6a0440d0f5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11497782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8eb25437afde04a9ba82484e8809f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: .5
 --- !u!212 &21232326
 SpriteRenderer:
   m_ObjectHideFlags: 1

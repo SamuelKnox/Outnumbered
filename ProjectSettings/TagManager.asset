@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - Structure
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -37,13 +38,13 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
-  - name: Default
-    userID: 0
-    uniqueID: 0
-    locked: 0
   - name: Background
     userID: 1
     uniqueID: 1993145315
+    locked: 0
+  - name: Default
+    userID: 0
+    uniqueID: 0
     locked: 0
   - name: Foreground
     userID: 2
