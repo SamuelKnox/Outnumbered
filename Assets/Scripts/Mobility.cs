@@ -10,6 +10,7 @@ public class Mobility : MonoBehaviour
     public bool Moveable = true;
     [Tooltip("Whether or not the entity should be facing in the direction they are moving")]
     public bool RotateWithMovement = true;
+
     /// <summary>
     /// Moves gameObject based on the parameters of horizontal axis, vertical axis, and speed
     /// </summary>
