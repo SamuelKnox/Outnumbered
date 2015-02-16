@@ -36,11 +36,13 @@ public class LevelLoader : MonoBehaviour {
 
     private void LoadGhosts()
     {
+        GameManager.Instance.GhostLives = 0;
         foreach (Transform ghost in GameObject.Find("Ghosts").transform)
         {
             ghost.gameObject.GetComponent<Turret>().enabled = false;
             ghost.gameObject.SetActive(true);
             ghost.transform.position = Vector3.zero;
+            GameManager.Instance.GhostLives++;
         }
     }
 

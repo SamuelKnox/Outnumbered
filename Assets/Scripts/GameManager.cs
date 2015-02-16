@@ -3,6 +3,13 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+    [Tooltip("The number of player lives remaining")]
+    public int PlayerLives;
+    [Tooltip("Score that the player has accumulated")]
+    public float Score;
+
+    public int GhostLives { get; set; }
+
     private static GameManager instance;
     public static GameManager Instance
     {
