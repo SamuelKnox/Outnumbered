@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isApplicationQuitting)
         {
+            GetComponent<Mobility>().Moveable = false;
+            animator.SetTrigger("Die");
             GameManager.Instance.PlayerLives--;
             GameManager.Instance.ResetCurrentFrame();
             GameObject ghosts = GameObject.Find("Ghosts");

@@ -14,6 +14,7 @@ public class ZombieController : MonoBehaviour
         pathfinder = GetComponent<Pathfinder>();
         attacker = GetComponent<Attacker>();
         SetUpAudio();
+        InvokeRepeating("FindNewTarget", 1.0f, Random.Range(1.0f, 10.0f));
     }
 
     void Update()
@@ -49,6 +50,7 @@ public class ZombieController : MonoBehaviour
         }
         pathfinder.Target = target;
         float targetDistance = pathfinder.Agent.remainingDistance;
+        Debug.Log(targetDistance);
         foreach (GameObject ghost in GameObject.FindGameObjectsWithTag("Ghost"))
         {
             pathfinder.Target = ghost;

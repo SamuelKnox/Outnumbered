@@ -152,7 +152,7 @@ MonoBehaviour:
   SpawnDistance: 0
   Speed: 200
   Direction: {x: 0, y: 0}
-  RateOfFire: 5
+  RateOfFire: 1
   Ammunition: {fileID: 139822, guid: 2f70284e8dc6a1f45b1ec6da9d00873c, type: 2}
 --- !u!114 &11462460
 MonoBehaviour:
