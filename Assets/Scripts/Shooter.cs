@@ -56,6 +56,7 @@ public class Shooter : MonoBehaviour
         {
             ammunition.rigidbody2D.AddForce(Vector3.Normalize(Direction) * Speed);
         }
+        ammunition.GetComponent<AmmunitionController>().Creator = gameObject;
         ammunition.transform.parent = GameObject.Find("Ammunition").transform;
         reloadTimeRemaining = RateOfFire;
         return true;

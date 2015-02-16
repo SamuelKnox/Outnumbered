@@ -41,7 +41,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 177994}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: 0}
 --- !u!95 &9577994
@@ -84,7 +84,7 @@ MonoBehaviour:
   SpawnDistance: 0
   Speed: 200
   Direction: {x: 0, y: 0}
-  RateOfFire: 15
+  RateOfFire: 10
   Ammunition: {fileID: 139822, guid: 2f70284e8dc6a1f45b1ec6da9d00873c, type: 2}
 --- !u!114 &11453322
 MonoBehaviour:
