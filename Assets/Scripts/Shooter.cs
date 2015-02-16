@@ -14,9 +14,13 @@ public class Shooter : MonoBehaviour
     [Tooltip("Ammunition which will be shot by this entity")]
     public GameObject Ammunition;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         reloadTimeRemaining = RateOfFire;
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = Resources.Load("Audio/shoot") as AudioClip;
     }
 
     void Update()
@@ -30,6 +34,7 @@ public class Shooter : MonoBehaviour
         {
             return false;
         }
+        audioSource.Play();
         Vector2 ammunitionPosition = transform.position + transform.up * SpawnDistance;
         GameObject ammunition = Instantiate(Ammunition, ammunitionPosition, transform.rotation) as GameObject;
         if (Direction == Vector2.zero)

@@ -2,6 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(Mobility))]
+[RequireComponent(typeof(AudioSource))]
 public class Builder : MonoBehaviour
 {
     [Tooltip("Range at which the entity builds")]
@@ -12,11 +13,14 @@ public class Builder : MonoBehaviour
     public GameObject Turret;
 
     private Mobility mobility;
+    private AudioSource audioSource;
 
     // Use this for initialization
     void Start()
     {
         mobility = GetComponent<Mobility>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = Resources.Load("Audio/building") as AudioClip;
     }
 
     public void Build(string structureName)
@@ -37,6 +41,7 @@ public class Builder : MonoBehaviour
                 structurePrefab = Turret;
                 break;
         }
+        audioSource.Play();
         GameObject structure = Instantiate(structurePrefab, transform.position + transform.up * Range, transform.rotation) as GameObject;
         structure.transform.parent = GameObject.Find("Structures").transform;
         StartCoroutine("EnableMovementAfterConstructionComplete");

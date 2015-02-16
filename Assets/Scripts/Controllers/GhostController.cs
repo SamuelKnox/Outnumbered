@@ -30,6 +30,10 @@ public class GhostController : MonoBehaviour
 
     void Update()
     {
+        if (FrameStates == null)
+        {
+            return;
+        }
         if (FrameStates.Count > GameManager.Instance.CurrentFrame)
         {
             FrameState currentFrameState = FrameStates[GameManager.Instance.CurrentFrame];

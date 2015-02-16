@@ -7,11 +7,13 @@ public class ZombieController : MonoBehaviour
 {
     private Pathfinder pathfinder;
     private Attacker attacker;
+    private AudioSource audioSource;
 
     void Start()
     {
         pathfinder = GetComponent<Pathfinder>();
         attacker = GetComponent<Attacker>();
+        SetUpAudio();
     }
 
     void Update()
@@ -24,6 +26,18 @@ public class ZombieController : MonoBehaviour
         {
             attacker.AttackTarget();
         }
+    }
+
+    private void SetUpAudio()
+    {
+        InvokeRepeating("PlayZombieSound", Random.Range(0, 10.0f), Random.Range(10.0f, 25.0f));
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = Resources.Load("Audio/zombie" + Random.Range(1, 24)) as AudioClip;
+    }
+
+    private void PlayZombieSound()
+    {
+        audioSource.Play();
     }
 
     private void FindNewTarget()
