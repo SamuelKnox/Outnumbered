@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11483198}
   m_Layer: 0
   m_Name: Zombie Spawner
-  m_TagString: Untagged
+  m_TagString: Enemy Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

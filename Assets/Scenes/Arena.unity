@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb4aeadcce2a1f4bb16a75848d3eb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
+  Enemy: {fileID: 143408, guid: 5c6dea321de94204895f28868e9275a0, type: 2}
   SpawnDelay: 1
   SpawnRate: 10
 --- !u!212 &61241264
@@ -231,7 +231,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &71741020
 GameObject:
@@ -733,9 +733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb4aeadcce2a1f4bb16a75848d3eb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
+  Enemy: {fileID: 168954, guid: 6139a488a5181104aa482c77cc80b2a5, type: 2}
   SpawnDelay: 1
-  SpawnRate: 10
+  SpawnRate: 15
 --- !u!212 &248364315
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &283622472
 GameObject:
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
   SpawnDelay: 1
-  SpawnRate: 10
+  SpawnRate: 5
 --- !u!212 &574035868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1557,7 +1557,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &582191720
 Prefab:
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
   SpawnDelay: 1
-  SpawnRate: 10
+  SpawnRate: 5
 --- !u!212 &607268898
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1670,7 +1670,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &630048632
 GameObject:
@@ -1682,6 +1682,8 @@ GameObject:
   - 4: {fileID: 630048633}
   - 212: {fileID: 630048635}
   - 114: {fileID: 630048634}
+  - 114: {fileID: 630048637}
+  - 114: {fileID: 630048636}
   m_Layer: 0
   m_Name: Zombie Spawner
   m_TagString: Enemy Spawner
@@ -1712,9 +1714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb4aeadcce2a1f4bb16a75848d3eb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
+  Enemy: {fileID: 168954, guid: 6139a488a5181104aa482c77cc80b2a5, type: 2}
   SpawnDelay: 1
-  SpawnRate: 10
+  SpawnRate: 15
 --- !u!212 &630048635
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1735,8 +1737,36 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &630048636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 630048632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb4aeadcce2a1f4bb16a75848d3eb6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
+  SpawnDelay: 11
+  SpawnRate: 15
+--- !u!114 &630048637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 630048632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb4aeadcce2a1f4bb16a75848d3eb6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 143408, guid: 5c6dea321de94204895f28868e9275a0, type: 2}
+  SpawnDelay: 6
+  SpawnRate: 15
 --- !u!1 &645148863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,7 +2452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb4aeadcce2a1f4bb16a75848d3eb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
+  Enemy: {fileID: 143408, guid: 5c6dea321de94204895f28868e9275a0, type: 2}
   SpawnDelay: 1
   SpawnRate: 10
 --- !u!212 &806548517
@@ -2445,7 +2475,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &818048592
 GameObject:
@@ -3682,7 +3712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb4aeadcce2a1f4bb16a75848d3eb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
+  Enemy: {fileID: 143408, guid: 5c6dea321de94204895f28868e9275a0, type: 2}
   SpawnDelay: 1
   SpawnRate: 10
 --- !u!212 &1229317244
@@ -3705,7 +3735,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1250081648
 GameObject:
@@ -3827,9 +3857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb4aeadcce2a1f4bb16a75848d3eb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
+  Enemy: {fileID: 168954, guid: 6139a488a5181104aa482c77cc80b2a5, type: 2}
   SpawnDelay: 1
-  SpawnRate: 10
+  SpawnRate: 15
 --- !u!212 &1406450248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3850,7 +3880,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1416874831
 GameObject:
@@ -3894,7 +3924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 106200, guid: d8f7a9fb490e87a4ca36d7f4b395c10c, type: 2}
   SpawnDelay: 1
-  SpawnRate: 10
+  SpawnRate: 5
 --- !u!212 &1416874834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3915,7 +3945,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300070, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 113977f90762b8242b1a29c70ba24d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1429359680
 GameObject:

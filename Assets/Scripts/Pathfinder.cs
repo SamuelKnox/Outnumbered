@@ -48,7 +48,7 @@ public class Pathfinder : MonoBehaviour
     {
         float distanceTraveled = Vector2.Distance(previousPosition, transform.position);
         previousPosition = transform.position;
-        IsStuck = distanceTraveled < 0.01f;
+        IsStuck = distanceTraveled < 0.1f;
     }
 
     private void UpdatePath()

@@ -10,11 +10,12 @@ public class Death : MonoBehaviour
             case "Player":
                 GetComponent<Mobility>().Moveable = false;
                 GameManager.Instance.PlayerLives--;
+                GetComponent<Animator>().SetTrigger("Die");
                 Destroy(gameObject, 3.0f);
                 break;
             case "Ghost":
                 gameObject.SetActive(false);
-                GameObject zombie = Instantiate(Resources.Load("Zombie"), transform.position, transform.rotation) as GameObject;
+                GameObject zombie = Instantiate(Resources.Load("Zombie 3"), transform.position, transform.rotation) as GameObject;
                 zombie.transform.parent = GameObject.Find("Enemies").transform;
                 GameManager.Instance.GhostLives--;
                 break;
