@@ -26,7 +26,9 @@ public class Builder : MonoBehaviour
     public void Build(string structureName)
     {
         Vector2 buildPosition = transform.position + transform.up * Range;
-        if (Physics2D.OverlapPoint(buildPosition))
+        Vector2 topLeftCorner = new Vector2(buildPosition.x - 0.1f, buildPosition.y - 0.1f);
+        Vector2 bottomRightCorner = new Vector2(buildPosition.x + 0.1f, buildPosition.y + 0.1f);
+        if (Physics2D.OverlapArea(topLeftCorner, bottomRightCorner))
         {
             return;
         }
