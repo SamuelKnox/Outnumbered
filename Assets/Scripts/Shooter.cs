@@ -10,11 +10,12 @@ public class Shooter : MonoBehaviour
     [Tooltip("Direction in which the ammunition will travel.  If Vector2.zero, the ammunition will travel in the direction that the entity is facing.")]
     public Vector2 Direction = Vector2.zero;
     [Tooltip("Rate in seconds at which the entity is able to fire")]
-    public float RateOfFire = 1.0f; private float reloadTimeRemaining;
+    public float RateOfFire = 1.0f;
     [Tooltip("Ammunition which will be shot by this entity")]
     public GameObject Ammunition;
 
     private AudioSource audioSource;
+    private float reloadTimeRemaining;
 
     void Start()
     {
@@ -26,6 +27,16 @@ public class Shooter : MonoBehaviour
     void Update()
     {
         reloadTimeRemaining -= Time.deltaTime;
+    }
+
+    public bool Shoot(Vector3 target)
+    {
+        Vector2 oldDirection = Direction;
+        Direction = (target - transform.position).normalized;
+        transform.up = Direction;
+        bool shotSuccessful = Shoot();
+        Direction = oldDirection;
+        return shotSuccessful;
     }
 
     public bool Shoot()

@@ -48,6 +48,12 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Shoot");
             currentFrameState.Shoot = true;
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            shooter.Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            animator.SetTrigger("Shoot");
+            currentFrameState.Shoot = true;
+        }
         if (Input.GetButton("Destroy Structure"))
         {
             builder.DestroyStructure();
