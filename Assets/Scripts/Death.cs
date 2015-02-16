@@ -9,7 +9,6 @@ public class Death : MonoBehaviour
         {
             case "Player":
                 GetComponent<Mobility>().Moveable = false;
-                GameManager.Instance.PlayerLives--;
                 GetComponent<Animator>().SetTrigger("Die");
                 Destroy(gameObject, 3.0f);
                 break;

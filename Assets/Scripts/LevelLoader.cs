@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class LevelLoader : MonoBehaviour {
+public class LevelLoader : MonoBehaviour
+{
     // Use this for initialization
     void Start()
     {
+        Time.timeScale = 0.01f;
         ResetLevel();
         LoadPlayer();
         LoadGhosts();
         RemoveDeathScripts();
-        Destroy(this);
+        StartCoroutine("CountDown");
     }
 
     private void ResetLevel()
@@ -52,5 +55,23 @@ public class LevelLoader : MonoBehaviour {
         {
             Destroy(deathScript);
         }
+    }
+
+    IEnumerator CountDown()
+    {
+        GameObject countdown = GameObject.Find("Countdown");
+        countdown.GetComponent<Image>().enabled = true;
+        Text countdownText = GameObject.Find("Countdown Text").GetComponent<Text>();
+        countdownText.enabled = true;
+        countdownText.text = "3";
+        yield return new WaitForSeconds(0.01f);
+        countdownText.text = "2";
+        yield return new WaitForSeconds(0.01f);
+        countdownText.text = "1";
+        yield return new WaitForSeconds(0.01f);
+        countdown.GetComponent<Image>().enabled = false;
+        countdownText.enabled = false;
+        Time.timeScale = 1.0f;
+        Destroy(this);
     }
 }

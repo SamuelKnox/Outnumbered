@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isApplicationQuitting)
         {
+            GameManager.Instance.PlayerLives--;
             GameManager.Instance.ResetCurrentFrame();
             GameObject ghosts = GameObject.Find("Ghosts");
             GameObject ghost = Instantiate(Resources.Load("Ghost")) as GameObject;

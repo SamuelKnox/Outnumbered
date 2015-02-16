@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameManager : MonoBehaviour
@@ -28,6 +29,14 @@ public class GameManager : MonoBehaviour
         get { return currentFrame; }
     }
 
+    void Update()
+    {
+        if (PlayerLives == 0)
+        {
+            GameOver();
+        }
+    }
+
     void LateUpdate()
     {
         currentFrame++;
@@ -39,5 +48,14 @@ public class GameManager : MonoBehaviour
     public void ResetCurrentFrame()
     {
         currentFrame = 0;
+    }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0;
+        GameObject gameOver = GameObject.Find("Game Over");
+        gameOver.GetComponent<Image>().enabled = true;
+        Text gameOverText = GameObject.Find("Game Over Text").GetComponent<Text>();
+        gameOverText.enabled = true;
     }
 }

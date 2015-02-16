@@ -205,7 +205,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Shooting
-  m_Speed: .0670000017
+  m_Speed: .0500000007
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 7854cee3a5c4e024483eb9a56119dd3b, type: 2}
@@ -277,9 +277,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110266060}
-      second: []
-    data:
       first: {fileID: 0}
       second:
       - {fileID: 110161854}
@@ -301,6 +298,9 @@ StateMachine:
       first: {fileID: 110226238}
       second:
       - {fileID: 110131486}
+    data:
+      first: {fileID: 110266060}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
